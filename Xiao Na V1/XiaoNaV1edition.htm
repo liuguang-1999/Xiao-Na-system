@@ -15,63 +15,51 @@
     //  小娜V1版本 初始步骤 利用引导信息和客户进行交互
     //  用死循环 限制客户的操做  可以用while 进行限制 
     //  死循环内 利用弹窗信息引导客户进行下一步操作
-    while (true) {
-        var info = prompt("你好我是小娜,请选择功能:\n输入q:退出\n1，求和\n2，系统时间\n3，讲笑话");
-        // 分支1、退出小娜系统
-        if (info === "q") {
-            alert(11)
-            break;
-        }
-        // 分支2、进入求和系统
-        else if (info === "1") {
-            var sum = prompt("请按以下格式输入：1，2，3 必须用，隔开");
-            var sum2 = sum.split(',');
-            // var sum2 = parseInt(sum2)
-            var he = 0;
-            for (var i = 0; i < sum2.length; i++) {
-                // sum2[i] = sum2[i] * 1
-                sum2[i] = parseInt(sum2[i])
-                he += sum2[i]
-            }
-            alert("和为" + he)
-        }
-        // 分支3、进入系统时间
-        else if (info === "2") {
-            var date = new Date()
-            // 年
-            var nian = date.getFullYear();
-            // 月
-            var yue = date.getMonth() + 1;
-            // 日
-            var ri = date.getDate();
-            // 时
-            var shi = date.getHours();
-            // 分
-            var fen = date.getMinutes();
-            // 秒
-            var miao = date.getSeconds();
-            //  拼接在一起
-            var sj = `${nian}年${yue}月${ri}日${shi}时${fen}分${miao}秒`;
-            alert(sj)
-        }
-        // 分支4、进入笑话系统
-        else if (info === "3") {
-            // 创建一个 笑话数组 
-            var xh = ["笑话1··", "笑话2··", "笑话3··", "笑话4··", "笑话5··", "笑话6··"];
-            // 利用 js 内置对象 随机数 
-            var a = Math.random()
-            // 随机数 随机范围 是0~1 扩大取值范围 = 随机数 × 数组长度
-            // 随机数 × 的长度不可以写死  写死后追加的笑话 会受到影响 
-            // 写成xh.length  之后 在数组里追加 多少条笑话 都不会受到影响
-            a = a * xh.length
-            // 扩大完取值范围后 随机数 位数消除 方法：Math.floor向下取整 
-            var a = Math.floor(a)
-            //  向下取整后 有了随机数 就可 随机拿到 数组里面的笑话了
-            alert(xh[a]);
-        }
-
-    }
-
+                while (true) {
+                    var info = prompt("你好我是小娜,请选择功能:\n输入q:退出\n1，求和\n2，系统时间\n3，讲笑话");
+                    // 分支1、退出小娜系统
+                    if (info === "q") {
+                        alert("退出成功")
+                        break;
+                    }
+                    // 分支2、进入求和系统
+                    else if (info === "1") {
+                        var sum = prompt("请按以下格式输入：1，2，3 必须用，隔开");
+                        var sum2 = sum.split(',');
+                        var he = 0;
+                        for (var i = 0; i < sum2.length; i++) {
+                            sum2[i] = parseInt(sum2[i])
+                            he += sum2[i]
+                        }
+                        alert("和为" + he)
+                    }
+                    // 分支3、进入系统时间
+                    else if (info === "2") {
+                        var date = new Date()
+                        // 年
+                        var nian = date.getFullYear();
+                        // 月
+                        var yue = date.getMonth() + 1;
+                        // 日
+                        var ri = date.getDate();
+                        // 时
+                        var shi = date.getHours();
+                        // 分
+                        var fen = date.getMinutes();
+                        // 秒
+                        var miao = date.getSeconds();
+                        var sj = `${nian}年${yue}月${ri}日${shi}时${fen}分${miao}秒`;
+                        alert(sj)
+                    }
+                    // 分支4、进入笑话系统
+                    else if (info === "3") {
+                        var xh = ["笑话1··", "笑话2··", "笑话3··", "笑话4··", "笑话5··", "笑话6··"];
+                        var a = Math.random()
+                        a = a * xh.length
+                        var a = Math.floor(a)
+                        alert(xh[a]);
+                    }
+                }
 </script>
 
 </html>
