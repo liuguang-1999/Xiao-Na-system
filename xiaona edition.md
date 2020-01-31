@@ -183,7 +183,7 @@ while (true) {
             	 }
 ```
 
-# 小娜V2版本
+# 小娜V2版本 代码封装
 
 ## 封装前初始化和引用
 
@@ -267,7 +267,7 @@ function SystemTime() {
     // 没有形参与实参不需要传入
 ```
 
-# 笑话 分支 功能封装
+## 笑话 分支 功能封装
 
 ```js
 // 函数命名 Randomjokes
@@ -286,4 +286,6 @@ function Randomjokes() {
 	var data = Randomjokes();
     // 没有形参与实参不需要传入
 ```
+
+# 小娜V3版本 功能对象化
 
