@@ -183,3 +183,107 @@ while (true) {
             	 }
 ```
 
+# 小娜V2版本
+
+## 封装前初始化和引用
+
+* 创建一个文件夹在文件夹里创建一个 .JS的文件 
+
+```js
+// 创建 文件夹
+JS
+// 创建 文件
+XiaoNa.js
+// 代码中 引入
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 小娜封装功能js文件 -->
+    <script src="./JS/XiaoNa.js"></script>
+</head>
+```
+
+## 封装代码注意事项
+
+* 1. 必须在代码内部引入 XiaoNa.js文件
+* 2. 在.js/ 文件内部 写函数方法
+* 3. 在function后面命名
+* 4. 观察 是否需要返回值
+* 5. 观察 是否需要设置形参或实参
+
+## 求和 分支 功能封装
+
+```js
+// 函数命名 sueforpeace
+// 需要设置 形参与实参
+function sueforpeace(he) {
+    he = he.split(",");
+    var sum = 0;
+    for (var i = 0; i < he.length; i++) {
+        he[i] = he[i] * 1
+        sum += he[i]
+    }
+    // 有返回值
+    return sum
+};
+// 调用方式
+sueforpeace();
+// 可以传入 实参
+sueforpeace(he)
+// 需要返回值可以声明变量接收
+var data = sueforpeace(he)
+```
+
+## 时间 分支 功能封装
+
+```js
+// 函数命名 SystemTime
+// 不需要设置 形参与实参
+function SystemTime() {
+    // 构造 时间函数
+    var data = new Date();
+    // 年
+    var nian = data.getFullYear();
+    // 月
+    var yue = data.getMonth() + 1;
+    // 日
+    var ri = data.getDate();
+    // 时
+    var shi = data.getHours();
+    // 分
+    var fen = data.getMinutes();
+    // 秒
+    var miao = data.getSeconds();
+    var Time = `${nian}年${yue}月${ri}日${shi}时${fen}分${miao}秒`
+    // 但 有返回值
+    return Time
+};
+	// 调用方式 
+	SystemTime();
+	// 接收返回值
+	var data = SystemTime()
+    // 没有形参与实参不需要传入
+```
+
+# 笑话 分支 功能封装
+
+```js
+// 函数命名 Randomjokes
+// 不需要 形参与实参
+function Randomjokes() {
+    var xh = ["笑话1··", "笑话2··", "笑话3··", "笑话4··", "笑话5··", "笑话6··",];
+    var a = Math.random();
+    a = a * xh.length;
+    a = Math.floor(a);
+    // 有返回值
+    return xh[a]
+}
+// 调用方式 
+	Randomjokes();
+	// 接收返回值
+	var data = Randomjokes();
+    // 没有形参与实参不需要传入
+```
+
