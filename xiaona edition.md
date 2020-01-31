@@ -401,7 +401,7 @@ var Na = {
     var data = Na.Randomjokes()
 ```
 
-## 代码总体示例
+## 代码总体示例 ！！！
 
 ```js
 // 代码语义化
