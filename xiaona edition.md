@@ -289,3 +289,160 @@ function Randomjokes() {
 
 # 小娜V3版本 功能对象化
 
+1. 对象化 代码的目的是为了 减少代码量 美化页面代码
+2. 利用代码语义化的方式去管理代码
+3. 把所有的 方法集中到对象上面去管理
+
+## 对象化前 初始化文件和引用文件
+
+1. 创建js文件夹
+2. 引用 JS文件夹内文件
+3. 在文件夹内创建命为（Na）对象  
+4. 向Na这个对象上 添加和编写一系列方法以及功能
+
+```js
+   // 创建js文件夹
+    js
+    // 在文件夹内创建js文件
+    XiaoNaV3.js
+< head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小娜V3</title>
+    <!-- 小娜对象化js文件 -->
+  	<script src="./JS/XiaoNaV3.js"></script>
+</head>
+```
+
+## 向对象内添加(求和)功能
+
+* 分步 示例、1
+
+```js
+// 声明 一个名为Na 的对象
+var Na = {
+     // 求和功能
+     // 把方法添加到对象上 已匿名函数的方式进行编写
+     // 设置形参和实参
+    sueforpeace: function (he) {
+        he = he.split(",");
+        var sum = 0;
+        for (var i = 0; i < he.length; i++) {
+            he[i] = he[i] * 1;
+            sum += he[i]
+        };
+        // 有返回值
+        return sum
+    }
+}
+// 调用方式
+Na.sueforpeace();
+// 可以传入 实参
+Na.sueforpeace(he)
+// 需要返回值可以声明变量接收
+var data = Na.sueforpeace(he)
+```
+
+## 向对象内添加(时间)功能
+
+*  分步 示例、2
+
+```js
+var Na = {
+    // 系统时间
+    // 不需要设置形参与实参
+    SystemTime: function () {
+        // 构造 时间函数
+        var data = new Date();
+        // 年
+        var nian = data.getFullYear();
+        // 月
+        var yue = data.getMonth() + 1;
+        // 日
+        var ri = data.getDate();
+        // 时
+        var shi = data.getHours();
+        // 分
+        var fen = data.getMinutes();
+        // 秒
+        var miao = data.getSeconds();
+        var Time = `${nian}年${yue}月${ri}日${shi}时${fen}分${miao}秒`
+        // 有返回值
+        return Time
+    },
+}
+    // 调用方式
+    Na.SystemTime();
+    // 需要返回值可以声明变量接收
+    var data = Na.SystemTime()
+```
+
+## 向对象内添加(笑话)功能
+
+*  分步 示例、3
+
+```js
+var Na = {
+     // 随机笑话
+     // 不需要 设置型参与实参
+    Randomjokes: function () {
+        var xh = ["笑话1··", "笑话2··", "笑话3··", "笑话4··", "笑话5··", "笑话6··",];
+        var a = Math.random();
+        a = a * xh.length;
+        a = Math.floor(a);
+        // 有返回值
+        return xh[a]
+    }
+}
+    // 调用方式
+    Na.Randomjokes();
+    // 需要返回值可以声明变量接收
+    var data = Na.Randomjokes()
+```
+
+## 代码总体示例
+
+```js
+// 代码语义化
+var Na = {
+    // 求和
+    sueforpeace: function (he) {
+        he = he.split(",");
+        var sum = 0;
+        for (var i = 0; i < he.length; i++) {
+            he[i] = he[i] * 1;
+            sum += he[i]
+        };
+        return sum
+    },  // ！！！ 代码语句结束 分割接节点 必须用逗号, 进行结尾 用结束符; 会报错
+    // 系统时间
+    SystemTime: function () {
+        // 构造 时间函数
+        var data = new Date();
+        // 年
+        var nian = data.getFullYear();
+        // 月
+        var yue = data.getMonth() + 1;
+        // 日
+        var ri = data.getDate();
+        // 时
+        var shi = data.getHours();
+        // 分
+        var fen = data.getMinutes();
+        // 秒
+        var miao = data.getSeconds();
+        var Time = `${nian}年${yue}月${ri}日${shi}时${fen}分${miao}秒`
+        return Time
+    },
+    // 随机笑话
+    Randomjokes: function () {
+        var xh = ["笑话1··", "笑话2··", "笑话3··", "笑话4··", "笑话5··", "笑话6··",];
+        var a = Math.random();
+        a = a * xh.length;
+        a = Math.floor(a);
+        return xh[a]
+    }
+};
+```
+
