@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小娜V3</title>
+    <!-- 小娜对象化js文件    -->
+    <script src="./JS/XiaoNaV3.js"></script>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    while (true) {
+        var info = prompt("你好我是小娜,请选择功能:\n输入q:退出\n1，求和\n2，系统时间\n3，讲笑话");
+
+        // 退出 循环系统
+        if (info === "q") {
+            alert("退出成功")
+            break;
+
+            // 分支、1 求和
+        } else if (info === "1") {
+            var he = prompt("请按以下格式输入：1，2，3 必须用，隔开");
+            // 对象化 调用
+            var sum = Na.sueforpeace(he);
+
+            alert("和为" + sum)
+
+            // 分支、2 系统时间
+        } else if (info === "2") {
+            // 对象化 调用
+            var Time = Na.SystemTime();
+
+            alert(Time)
+
+            // 分支、3 随机笑话
+        } else if (info === "3") {
+            // 对象化 调用
+            var xh = Na.Randomjokes();
+            alert(xh);
+        }
+    };
+
+</script>
+
+</html>
