@@ -6,9 +6,9 @@ function sueforpeace(he) {
     he = he.split(",");
     var sum = 0;
     for (var i = 0; i < he.length; i++) {
-        he[i] = he[i] * 1
+        he[i] = he[i] * 1;
         sum += he[i]
-    }
+    };
     return sum
 };
 // 系统时间
